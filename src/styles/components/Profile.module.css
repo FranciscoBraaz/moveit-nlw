@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    
+}
+
+.container > div {
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.container > img {
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+}
+
+.container strong {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--title);
+}
+
+.container p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.container p > img {
+    margin-right: 0.5rem;
+}

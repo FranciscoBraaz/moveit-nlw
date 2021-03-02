@@ -1,0 +1,16 @@
+.challengesCompletedContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 3.5rem 0;
+    border-bottom: 1px solid #d7d8da;
+    padding-bottom: 1rem;
+    font-weight: 500;
+}
+
+.challengesCompletedContainer p:first-child {
+    font-size: 1.25rem;
+}
+
+.challengesCompletedContainer p:last-child {
+    font-size: 1.5rem;
+}
