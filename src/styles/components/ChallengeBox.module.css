@@ -1,0 +1,102 @@
+.ChallengeBoxContainer {
+  background: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem 2rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.ChallengeBoxNotActive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ChallengeBoxNotActive strong {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.ChallengeBoxNotActive > p {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.4;
+  max-width: 70%;
+}
+
+.ChallengeBoxNotActive > p img {
+  margin-bottom: 1rem;
+}
+
+.ChallengeBoxActive {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.ChallengeBoxActive header {
+  font-size: 1.25rem;
+  padding: 0 2rem 1.5rem;
+  color: var(--blue);
+  font-weight: 600;
+  border-bottom: 1px solid var(--gray-line);
+}
+
+.ChallengeBoxActive > main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ChallengeBoxActive > main strong {
+  margin: 1.5rem 0 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--title);
+}
+
+.ChallengeBoxActive > main p {
+  line-height: 1.5;
+}
+
+.ChallengeBoxActive > footer {
+  display: flex;
+  justify-content: center;
+}
+
+.ChallengeBoxActive > footer button {
+  flex: 1;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  font-weight: 600;
+  border-radius: 5px;
+  color: var(--white);
+  transition: filter 0.2s;
+}
+
+.ChallengeBoxActive > footer button:hover {
+  filter: brightness(0.9);
+}
+
+.ChallengeBoxActive > footer button:first-child {
+  background: var(--red);
+  margin-right: 0.5rem;
+}
+
+.ChallengeBoxActive > footer button:last-child {
+  margin-left: 0.5rem;
+  background: var(--green);
+}
