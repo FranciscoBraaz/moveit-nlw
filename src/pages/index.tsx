@@ -18,7 +18,7 @@ const login = () => {
             <>
               <h1>Bem-vindo</h1>
               <div className={styles.userNotConnected}>
-                <button type="button" onClick={() => signIn()}>
+                <button type="button" onClick={() => signIn("github")}>
                   <img src="Github.png" />
                   <span>Faça seu login utilizando Github</span>
                 </button>
