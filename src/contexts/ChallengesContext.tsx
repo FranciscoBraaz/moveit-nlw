@@ -2,6 +2,7 @@ import { createContext, ReactNode, useEffect, useState } from "react";
 import challenges from "../../challenges.json";
 import Cookie from "js-cookie";
 import LevelUpModal from "../components/LevelUpModal";
+import { useSession } from "next-auth/client";
 
 interface Challenge {
   type: "body" | "eye";
@@ -45,11 +46,13 @@ export const ChallengesProvider = ({
   const [activeChallenge, setActiveChallenge] = useState(null);
   const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false);
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
+  const [session] = useSession();
 
   useEffect(() => {
     Cookie.set("level", String(level));
     Cookie.set("currentExperience", String(currentExperience));
     Cookie.set("challengesCompleted", String(challengesCompleted));
+    console.log(session ? session.user.id : "iu");
   }, [level, currentExperience, challengesCompleted]);
 
   useEffect(() => {
