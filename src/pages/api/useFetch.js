@@ -1,17 +1,16 @@
-import React from "react";
-
 const useFetch = async () => {
+  let data;
+  const BASE_URL = process.env.DATABASE_URL;
+
   const request = async (url) => {
     const response = await fetch(url);
     const json = await response.json();
-    return json;
+    data = json;
   };
 
-  let dataUsers = await request(
-    "https://605b363e27f0050017c06862.mockapi.io/api/v1/users"
-  );
+  await request(BASE_URL);
 
-  return { dataUsers };
+  return { data, BASE_URL };
 };
 
 export default useFetch;

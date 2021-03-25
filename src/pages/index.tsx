@@ -1,36 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/pages/Login.module.css";
 import { signIn, signOut, useSession } from "next-auth/client";
 import useFetch from "../pages/api/useFetch";
-import { GetStaticProps, GetServerSideProps } from "next";
+import { GetServerSideProps } from "next";
 
-const login = ({ dataUsers }) => {
-  console.log(dataUsers);
+const login = ({ data }) => {
   const [session] = useSession();
+  const [stateChange, setStateChange] = useState(false);
+  let id = 0;
+  const BASE_URL = process.env.DATABASE_URL;
+
+  if (!data) return null;
+
   if (session) {
-    if (verifyUser() === false && dataUsers) {
-      fetch("https://605b363e27f0050017c06862.mockapi.io/api/v1/users", {
+    if (!verifyUser() && !stateChange) {
+      fetch(BASE_URL, {
         method: "POST",
         headers: {
-          "Content-Type": "application/JSON",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(session.user),
       });
     }
+    if (!stateChange) {
+      setStateChange(true);
+    }
   }
+
   function verifyUser() {
     let condition: boolean = false;
-    let find: boolean = false;
-    console.log("oi");
-    for (let i = 1; i <= dataUsers.length && !find; i++) {
-      if (session.user.email === dataUsers[i].email) {
+
+    for (let i = 0; i <= data.length - 1 && !condition; i++) {
+      if (session.user.email == JSON.parse(JSON.stringify(data[i])).email) {
         condition = true;
-        find = true;
       }
     }
-
     return condition;
   }
+
   return (
     <div className={styles.containerPageLogin}>
       <div className={styles.containerImage}>
@@ -80,12 +87,11 @@ const login = ({ dataUsers }) => {
   );
 };
 
-export const getServerSideProps = async () => {
-  const { dataUsers } = await useFetch();
-
+export const getServerSideProps: GetServerSideProps = async () => {
+  const { data } = await useFetch();
   return {
     props: {
-      dataUsers,
+      data,
     },
   };
 };

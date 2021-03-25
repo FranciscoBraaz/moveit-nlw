@@ -28,6 +28,8 @@ interface ChallengesProviderProps {
   level: number;
   currentExperience: number;
   challengesCompleted: number;
+  idUser: number;
+  url: String;
 }
 
 export const ChallengesContext = createContext({} as ChallengesContentData);
@@ -36,12 +38,12 @@ export const ChallengesProvider = ({
   children,
   ...rest
 }: ChallengesProviderProps) => {
-  const [level, setLevel] = useState(rest.level ? rest.level : 1);
+  const [level, setLevel] = useState(rest.level);
   const [currentExperience, setCurrentExperience] = useState(
-    rest.currentExperience ? rest.currentExperience : 0
+    rest.currentExperience
   );
   const [challengesCompleted, setChallengesCompleted] = useState(
-    rest.challengesCompleted ? rest.challengesCompleted : 0
+    rest.challengesCompleted
   );
   const [activeChallenge, setActiveChallenge] = useState(null);
   const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false);
@@ -49,10 +51,19 @@ export const ChallengesProvider = ({
   const [session] = useSession();
 
   useEffect(() => {
-    Cookie.set("level", String(level));
-    Cookie.set("currentExperience", String(currentExperience));
-    Cookie.set("challengesCompleted", String(challengesCompleted));
-    console.log(session ? session.user.id : "iu");
+    const userData = {
+      level: level,
+      currentExperience: currentExperience,
+      challengesCompleted: challengesCompleted,
+    };
+
+    fetch(`${rest.url}/${rest.idUser}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    });
   }, [level, currentExperience, challengesCompleted]);
 
   useEffect(() => {
