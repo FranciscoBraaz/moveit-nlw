@@ -1,6 +1,5 @@
 import "../styles/global.css";
 
-import { ChallengesProvider } from "../contexts/ChallengesContext";
 import { Provider } from "next-auth/client";
 
 function MyApp({ Component, pageProps }) {

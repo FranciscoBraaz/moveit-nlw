@@ -1,9 +1,7 @@
 import NextAuth from "next-auth";
 import Providers from "next-auth/providers";
-import Adapters from "next-auth/adapters";
-import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient();
+
 
 export default (req, res) =>
   NextAuth(req, res, {
@@ -13,5 +11,17 @@ export default (req, res) =>
         clientSecret: process.env.GITHUB_CLIENT_SECRET,
       }),
     ],
-    adapter: Adapters.Prisma.Adapter({ prisma }),
+    callbacks: {
+      async signIn(user, account, metadata) {
+        const emailRes = await fetch("https://api.github.com/user/emails", {
+          headers: {
+            Authorization: `token ${account.accessToken}`,
+          },
+        });
+        const emails = await emailRes.json();
+        const primaryEmail = emails.find((e) => e.primary).email;
+        user.email = primaryEmail;
+      },
+    },
+
   });

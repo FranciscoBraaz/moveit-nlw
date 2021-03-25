@@ -1,9 +1,44 @@
-import React from "react";
+
+import React, { useEffect, useState } from "react";
 import styles from "../styles/pages/Login.module.css";
 import { signIn, signOut, useSession } from "next-auth/client";
+import useFetch from "../pages/api/useFetch";
+import { GetServerSideProps } from "next";
 
-const login = () => {
+const login = ({ data }) => {
   const [session] = useSession();
+  const [stateChange, setStateChange] = useState(false);
+  let id = 0;
+  const BASE_URL = process.env.DATABASE_URL;
+
+  if (!data) return null;
+
+  if (session) {
+    if (!verifyUser() && !stateChange) {
+      fetch(BASE_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(session.user),
+      });
+    }
+    if (!stateChange) {
+      setStateChange(true);
+    }
+  }
+
+  function verifyUser() {
+    let condition: boolean = false;
+
+    for (let i = 0; i <= data.length - 1 && !condition; i++) {
+      if (session.user.email == JSON.parse(JSON.stringify(data[i])).email) {
+        condition = true;
+      }
+    }
+    return condition;
+  }
+
   return (
     <div className={styles.containerPageLogin}>
       <div className={styles.containerImage}>
@@ -51,6 +86,16 @@ const login = () => {
       </div>
     </div>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const { data } = await useFetch();
+  return {
+    props: {
+      data,
+    },
+  };
+
 };
 
 export default login;

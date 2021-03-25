@@ -9,29 +9,44 @@ import ChallengeBox from "../components/ChallengeBox";
 import { CountdownProvider } from "../contexts/CountdownContext";
 import { GetServerSideProps } from "next";
 import { ChallengesProvider } from "../contexts/ChallengesContext";
-import { getSession, useSession } from "next-auth/client";
-import { Session } from "node:inspector";
 
-interface HomeProps {
-  level: number;
-  currentExperience: number;
-  challengesCompleted: number;
-  session: Session;
-}
+import useFetch from "./api/useFetch";
+import { useSession } from "next-auth/client";
 
-export default function Home(props: HomeProps) {
+export default function Home({ data, BASE_URL }) {
   const [session, loading] = useSession();
+
   if (loading) {
     return <h1>LOADING...</h1>;
   }
+
   if (!loading && !session) {
     return <p>You must be signed in to view this page</p>;
   }
+
+  let id = verifyUser();
+
+  function verifyUser() {
+    let condition: boolean = false;
+
+    for (let i = 0; i <= data.length - 1 && !condition; i++) {
+      if (session.user.email == JSON.parse(JSON.stringify(data[i])).email) {
+        condition = true;
+        id = JSON.parse(JSON.stringify(data[i])).id;
+      }
+    }
+    return id;
+  }
+
+  const user = data[id - 1];
+
   return (
     <ChallengesProvider
-      level={props.level}
-      currentExperience={props.currentExperience}
-      challengesCompleted={props.challengesCompleted}
+      level={Number(user.level)}
+      currentExperience={Number(user.currentExperience)}
+      challengesCompleted={Number(user.challengesCompleted)}
+      idUser={Number(id)}
+      url={BASE_URL}
     >
       <div className={styles.container}>
         <Head>
@@ -59,15 +74,15 @@ export default function Home(props: HomeProps) {
     </ChallengesProvider>
   );
 }
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
-  const session = await getSession(ctx);
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const { data, BASE_URL } = await useFetch();
+
   return {
     props: {
-      level: Number(level),
-      currentExperience: Number(currentExperience),
-      challengesCompleted: Number(challengesCompleted),
-      session: session,
+      data,
+      BASE_URL,
+
     },
   };
 };
