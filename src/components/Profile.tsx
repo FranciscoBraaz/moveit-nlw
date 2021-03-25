@@ -1,3 +1,4 @@
+import { useSession } from "next-auth/client";
 import React, { useContext } from "react";
 import { ChallengesContext } from "../contexts/ChallengesContext";
 import styles from "../styles/components/Profile.module.css";

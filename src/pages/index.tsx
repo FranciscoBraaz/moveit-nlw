@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import styles from "../styles/pages/Login.module.css";
 import { signIn, signOut, useSession } from "next-auth/client";
@@ -94,6 +95,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
       data,
     },
   };
+
 };
 
 export default login;

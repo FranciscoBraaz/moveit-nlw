@@ -9,6 +9,7 @@ import ChallengeBox from "../components/ChallengeBox";
 import { CountdownProvider } from "../contexts/CountdownContext";
 import { GetServerSideProps } from "next";
 import { ChallengesProvider } from "../contexts/ChallengesContext";
+
 import useFetch from "./api/useFetch";
 import { useSession } from "next-auth/client";
 
@@ -73,6 +74,7 @@ export default function Home({ data, BASE_URL }) {
     </ChallengesProvider>
   );
 }
+
 export const getServerSideProps: GetServerSideProps = async () => {
   const { data, BASE_URL } = await useFetch();
 
@@ -80,6 +82,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     props: {
       data,
       BASE_URL,
+
     },
   };
 };
