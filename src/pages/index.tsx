@@ -7,7 +7,6 @@ import { GetServerSideProps } from "next";
 const login = ({ data, BASE_URL }) => {
   const [session] = useSession();
   const [stateChange, setStateChange] = useState(false);
-  let id = 0;
 
   if (!data) return null;
 
@@ -31,7 +30,7 @@ const login = ({ data, BASE_URL }) => {
     let condition: boolean = false;
 
     for (let i = 0; i <= data.length - 1 && !condition; i++) {
-      if (session.user.email == data.email) {
+      if (session.user.email == data[i].email) {
         condition = true;
       }
     }
