@@ -9,8 +9,8 @@ A aplicação foi desenvolvida durante a  Next Level Week (4ª) da Rocketseat e 
 ### ⚙️ Veja funcionando:
 [Deploy](https://moveit-nextlevelweek-4.vercel.app/)
 
-<img src="https://i.imgur.com/cYAl6RF.png" alt="drawing" width="450"/>  <img src="https://i.imgur.com/0CxRpON.png" alt="drawing" width="450"/>
-<img src="https://i.imgur.com/QMfaJLQ.png" alt="drawing" width="450"/>  <img src="https://i.imgur.com/3kXOjBJ.png" alt="drawing" width="450"/> 
+<img src="https://i.imgur.com/cYAl6RF.png" alt="drawing" width="320"/>  <img src="https://i.imgur.com/0CxRpON.png" alt="drawing" width="320"/>
+<img src="https://i.imgur.com/QMfaJLQ.png" alt="drawing" width="320"/>  <img src="https://i.imgur.com/3kXOjBJ.png" alt="drawing" width="320"/> 
 
 ### Tecnologias utilizadas
 - [Reactjs](https://pt-br.reactjs.org/)
