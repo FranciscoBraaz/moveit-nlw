@@ -1,8 +1,8 @@
-**
+
 
 # MOVEIT - Next level week
 
-**
+
 ## Sobre o projeto
 A aplicação foi desenvolvida durante a  Next Level Week (4ª) da Rocketseat e se beseou na ténica de Pomodoro, com o objetivo de ajudar as pessoas em suas rotinas de estudos/trabalho. Ela acrescenta à técnica existente exercícios para os olhos e para as articulações, contribuindo para o bem-estar do usuário.
 
