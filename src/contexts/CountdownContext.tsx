@@ -7,6 +7,7 @@ import {
 } from "react";
 
 import { ChallengesContext } from "./ChallengesContext";
+import * as workerTimers from "worker-timers";
 
 interface CountdownContextData {
   minutes: number;
@@ -21,7 +22,7 @@ interface CountdownProviderProps {
   children: ReactNode;
 }
 
-let countdownTimeout: NodeJS.Timeout;
+let countdownTimeout: number;
 
 export const CountdownContext = createContext({} as CountdownContextData);
 
@@ -30,16 +31,19 @@ export const CountdownProvider = ({ children }: CountdownProviderProps) => {
   const [isActive, setIsActive] = useState(false);
   const [hasFinished, setHasFinished] = useState(false);
   const { startNewChallenge } = useContext(ChallengesContext);
+  const [startTime, setStartTime] = useState(0);
 
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
 
   function countdownStart() {
+    let date = new Date();
     setIsActive(true);
+    setStartTime(date.getMilliseconds());
   }
 
   function resetCountdown() {
-    clearTimeout(countdownTimeout);
+    workerTimers.clearTimeout(countdownTimeout);
     setIsActive(false);
     setTime(25 * 60);
     setHasFinished(false);
@@ -47,7 +51,7 @@ export const CountdownProvider = ({ children }: CountdownProviderProps) => {
 
   useEffect(() => {
     if (isActive && time > 0) {
-      countdownTimeout = setTimeout(() => {
+      countdownTimeout = workerTimers.setTimeout(() => {
         setTime(time - 1);
       }, 1000);
     } else if (isActive && time === 0) {
