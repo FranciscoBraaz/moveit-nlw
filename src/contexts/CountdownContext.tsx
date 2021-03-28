@@ -27,7 +27,7 @@ let countdownTimeout: number;
 export const CountdownContext = createContext({} as CountdownContextData);
 
 export const CountdownProvider = ({ children }: CountdownProviderProps) => {
-  const [time, setTime] = useState(25 * 60);
+  const [time, setTime] = useState(0.05 * 60);
   const [isActive, setIsActive] = useState(false);
   const [hasFinished, setHasFinished] = useState(false);
   const { startNewChallenge } = useContext(ChallengesContext);
@@ -45,7 +45,7 @@ export const CountdownProvider = ({ children }: CountdownProviderProps) => {
   function resetCountdown() {
     workerTimers.clearTimeout(countdownTimeout);
     setIsActive(false);
-    setTime(25 * 60);
+    setTime(0.05 * 60);
     setHasFinished(false);
   }
 
