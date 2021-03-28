@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ChallengesContext } from "../contexts/ChallengesContext";
 import { CountdownContext } from "../contexts/CountdownContext";
 import styles from "../styles/components/Countdown.module.css";
+import useWindowSize from "../../utils/useCustomResize";
 
 const Countdown = () => {
   const {
@@ -13,11 +14,20 @@ const Countdown = () => {
     countdownStart,
   } = useContext(CountdownContext);
 
+  const { activeChallenge } = useContext(ChallengesContext);
+
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, "0").split("");
   const [secondLeft, secondRight] = String(seconds).padStart(2, "0").split("");
 
+  const size = useWindowSize();
+  const width = size[0];
+
   return (
-    <>
+    <div
+      style={{
+        display: activeChallenge && width <= 900 ? "none" : "block",
+      }}
+    >
       <div className={styles.countdownContainer}>
         <div>
           <span>{minuteLeft}</span>
@@ -55,7 +65,7 @@ const Countdown = () => {
           )}
         </>
       )}
-    </>
+    </div>
   );
 };
 

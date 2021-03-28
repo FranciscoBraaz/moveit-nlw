@@ -24,3 +24,28 @@
   flex: 1;
   margin-left: 3.125rem;
 }
+
+@media (max-width: 900px) {
+  .leftContainer {
+    margin-right: 0rem;
+    flex: unset;
+    width: 60%;
+    position: absolute;
+  }
+
+  .rightContainer {
+    flex: unset;
+    margin-left: 0;
+    width: 80%;
+    position: absolute;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .container section {
+    justify-content: center;
+    align-items: center;
+  }
+}

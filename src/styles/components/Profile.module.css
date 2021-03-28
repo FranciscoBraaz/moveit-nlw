@@ -1,33 +1,71 @@
 .container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .container > div {
-    margin-left: 1.5rem;
-    display: flex;
-    flex-direction: column;
+  margin-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .container > img {
-    width: 5.5rem;
-    height: 5.5rem;
-    border-radius: 50%;
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
 }
 
 .container strong {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--title);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--title);
+  text-transform: capitalize;
 }
 
 .container p {
-    font-size: 1rem;
-    margin-top: 0.5rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
 }
 
 .container p > img {
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .container p {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .container p > img {
+    width: 1.2rem;
     margin-right: 0.5rem;
+  }
+
+  .container strong {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .container strong {
+    font-size: 1.5rem;
+  }
+
+  .container > img {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+}
+
+@media (max-width: 280px) {
+  .container strong {
+    font-size: 1.2rem;
+  }
+
+  .container > img {
+    width: 4rem;
+    height: 4rem;
+  }
 }

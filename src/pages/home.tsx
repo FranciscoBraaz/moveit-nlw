@@ -82,7 +82,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
     props: {
       data,
       BASE_URL,
-
     },
   };
 };

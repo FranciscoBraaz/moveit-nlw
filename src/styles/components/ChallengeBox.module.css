@@ -100,3 +100,64 @@
   margin-left: 0.5rem;
   background: var(--green);
 }
+
+@media (max-width: 900px) {
+  .ChallengeBoxActive header {
+    font-size: 1.5rem;
+  }
+
+  .ChallengeBoxActive > main p {
+    font-size: 2rem;
+  }
+
+  .ChallengeBoxActive > main strong {
+    font-size: 2.5rem;
+  }
+
+  .ChallengeBoxActive > footer {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .ChallengeBoxActive header {
+    font-size: 1rem;
+  }
+
+  .ChallengeBoxActive > main p {
+    font-size: 1.5rem;
+  }
+
+  .ChallengeBoxActive > main strong {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  .ChallengeBoxActive > footer {
+    margin-top: 1.5rem;
+  }
+
+  .ChallengeBoxActive > main > img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 320px) {
+  .ChallengeBoxActive header {
+    font-size: 1rem;
+  }
+
+  .ChallengeBoxActive > main p {
+    font-size: 1.35rem;
+  }
+
+  .ChallengeBoxActive > main strong {
+    font-size: 1.5rem;
+  }
+
+  .ChallengeBoxActive > main > img {
+    width: 80px;
+    height: 80px;
+  }
+}

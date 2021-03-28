@@ -8,7 +8,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@prisma/client": "2.18.0",
     "js-cookie": "^2.2.1",
     "next": "10.0.7",
     "next-auth": "^3.13.3",
@@ -18,11 +17,10 @@
   },
   "devDependencies": {
     "@types/js-cookie": "^2.2.6",
-    "@types/next-auth": "^3.7.2",
+    "@types/next-auth": "^3.7.3",
     "@types/node": "^14.14.31",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
-    "prisma": "2.18.0",
     "typescript": "^4.2.3"
   }
 }

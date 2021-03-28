@@ -1,16 +1,68 @@
+/* MODAL */
+
+.containerModalLogin {
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modalLogin {
+  background: var(--white);
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem 3rem;
+  border-radius: 5px;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  position: relative;
+}
+
+.modalLogin h2 {
+  padding: 5px;
+}
+
+.modalLogin p {
+  padding: 5px;
+  width: 100%;
+  text-align: left;
+}
+
+.modalLogin > footer {
+  margin-top: 10px;
+}
+
+.modalLogin > footer > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modalLogin > footer > div > button {
+  flex: 1;
+  border-radius: 5px;
+  border: none;
+}
+
+/* Container página login*/
+
 .containerPageLogin {
   background: #5965e0;
   display: flex;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  justify-content: space-evenly;
 }
 
 .containerImage {
-  flex: 1;
   margin: 5rem 0rem;
-  margin-right: 53.5px;
-  position: relative;
 }
 
 .containerImage > img {
@@ -19,13 +71,15 @@
 }
 
 .containerLogin {
-  flex: 1;
   margin: 5rem 0rem;
-  margin-left: 53.5px;
   color: var(--white);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.containerLogin > div > img {
+  width: 100%;
 }
 
 .login {
@@ -40,6 +94,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 35px;
+  flex-direction: column;
 }
 
 .userNotConnected > button {
@@ -55,12 +110,20 @@
   filter: brightness(0.9);
 }
 
+.userNotConnected > button:last-child {
+  margin-top: 15px;
+}
+
+.userNotConnected > button:last-child img {
+  width: 40px;
+  height: 40px;
+}
+
 .userNotConnected > button > span {
   margin-left: 20px;
 }
 
-
-/* User logado */
+/* Usuário logado */
 
 .profile {
   display: flex;
@@ -91,6 +154,10 @@
   color: white;
 }
 
+.userConnected h2 {
+  text-transform: capitalize;
+}
+
 .buttonContinue {
   flex: 1;
   margin-right: 5px;
@@ -110,4 +177,99 @@
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: var(--red);
+}
+
+/*----------------- Media query -----------------*/
+
+@media (max-width: 1200px) {
+  .login {
+    flex: none;
+  }
+
+  .containerImage {
+    width: 100%;
+    height: 70%;
+    margin: 5rem 3rem;
+  }
+
+  .containerLogin {
+    margin: 5rem 3rem;
+    width: 80%;
+  }
+
+  .modalLogin {
+    width: 80%;
+    font-size: 1.6rem;
+    max-width: 500px;
+  }
+
+  .modalLogin > footer > div > button {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .containerImage {
+    height: 50%;
+  }
+
+  .login {
+    flex: none;
+  }
+
+  .containerPageLogin {
+    align-items: center;
+    justify-content: unset;
+  }
+
+  .modalLogin {
+    width: 80%;
+    font-size: 1.4rem;
+  }
+
+  .modalLogin > footer > div > button {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .containerImage {
+    position: absolute;
+    height: 90%;
+    margin: 0;
+  }
+
+  .containerLogin {
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+  }
+
+  .containerPageLogin {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .modalLogin {
+    width: 80%;
+    font-size: 1.2rem;
+  }
+
+  .modalLogin > footer > div > button {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .modalLogin {
+    width: 100%;
+    max-width: 600px;
+    font-size: 2rem;
+  }
+
+  .modalLogin > footer > div > button {
+    font-size: 2rem;
+  }
 }

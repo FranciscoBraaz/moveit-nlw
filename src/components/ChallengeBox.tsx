@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { ChallengesContext } from "../contexts/ChallengesContext";
 import { CountdownContext } from "../contexts/CountdownContext";
 import styles from "../styles/components/ChallengeBox.module.css";
+import useWindowSize from "../../utils/useCustomResize";
 
 const ChallengeBox = () => {
   const { activeChallenge, resetChallenge, completeChallenge } = useContext(
@@ -9,6 +10,8 @@ const ChallengeBox = () => {
   );
 
   const { resetCountdown } = useContext(CountdownContext);
+  const size = useWindowSize();
+  const width = size[0];
 
   function handleChallengeSucceeded() {
     completeChallenge();
@@ -21,7 +24,11 @@ const ChallengeBox = () => {
   }
 
   return (
-    <div className={styles.ChallengeBoxContainer}>
+    <div
+      // className={!displayState ? styles.ChallengeBoxContainerMobile : ""}
+      className={styles.ChallengeBoxContainer}
+      style={{ display: !activeChallenge && width <= 900 ? "none" : "flex" }}
+    >
       {activeChallenge ? (
         <div className={styles.ChallengeBoxActive}>
           <header>{`Ganhe ${activeChallenge.amount} xp`}</header>

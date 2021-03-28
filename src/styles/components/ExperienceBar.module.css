@@ -17,15 +17,45 @@
   position: relative;
 }
 
-.experienceBar > div > div {
+.currentExperienceBar {
   background: var(--green);
   height: inherit;
   border-radius: inherit;
   transition: ease 1s;
 }
 
-span.currentExperience {
+.currentExperienceText {
   position: absolute;
   top: 12px;
   transform: translateX(-50%);
+  width: 55px;
+  display: inline-flex;
+}
+
+@media (max-width: 900px) {
+  .experienceBar > span {
+    font-size: 1.5rem;
+  }
+
+  .experienceBar > div {
+    height: 5px;
+  }
+
+  .currentExperienceText {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .experienceBar > span {
+    font-size: 1.2rem;
+  }
+
+  .currentExperienceBar {
+    height: 4px;
+  }
+
+  .currentExperienceText {
+    font-size: 1.2rem;
+  }
 }
