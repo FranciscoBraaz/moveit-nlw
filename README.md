@@ -9,7 +9,7 @@ A aplicação foi desenvolvida durante a  Next Level Week (4ª) da Rocketseat e 
 ### ⚙️ Veja funcionando:
 [Deploy](https://moveit-nextlevelweek-4.vercel.app/)
 
-<img src="https://i.imgur.com/cYAl6RF.png" alt="drawing" width="320"/>  <img src="https://i.imgur.com/0CxRpON.png" alt="drawing" width="320"/>
+<img src="https://i.imgur.com/ALLSCQq.png" alt="drawing" width="320"/>  <img src="https://i.imgur.com/ALLSCQq.png" alt="drawing" width="320"/>
 <img src="https://i.imgur.com/QMfaJLQ.png" alt="drawing" width="320"/>  <img src="https://i.imgur.com/3kXOjBJ.png" alt="drawing" width="320"/> 
 
 ### Tecnologias utilizadas
@@ -24,5 +24,8 @@ A aplicação foi desenvolvida durante a  Next Level Week (4ª) da Rocketseat e 
 - [x] Criar página de login
 - [x] Implementar login/autenticação com GitHub
 - [x] Salvar dados do usuário logado
-- [ ] Design mobile
+- [x] Design mobile 
 - [ ] Funcionalidade de rank
+
+### 🛠️ Desafio pessoal
+- [x] Implementar login/autenticação com Twitter
