@@ -27,5 +27,5 @@ A aplicação foi desenvolvida durante a  Next Level Week (4ª) da Rocketseat e 
 - [x] Design mobile 
 - [ ] Funcionalidade de rank
 
-### 🛠️ Desafio pessoal
+### 🛠️ Desafio extra
 - [x] Implementar login/autenticação com Twitter
