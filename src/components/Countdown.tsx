@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ChallengesContext } from "../contexts/ChallengesContext";
 import { CountdownContext } from "../contexts/CountdownContext";
 import styles from "../styles/components/Countdown.module.css";
-import useWindowSize from "../../utils/useCustomResize";
+import useWindowSize from "../../utils/useWindowSize";
 
 const Countdown = () => {
   const {

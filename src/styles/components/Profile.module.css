@@ -48,9 +48,30 @@
   }
 }
 
+@media (max-width: 600px) {
+  .container strong {
+    font-size: 1.25rem;
+  }
+
+  .container > img {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .container p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .container p > img {
+    width: 1rem;
+    margin-right: 0.5rem;
+  }
+}
+
 @media (max-width: 320px) {
   .container strong {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .container > img {
@@ -60,10 +81,6 @@
 }
 
 @media (max-width: 280px) {
-  .container strong {
-    font-size: 1.2rem;
-  }
-
   .container > img {
     width: 4rem;
     height: 4rem;

@@ -1,6 +1,6 @@
 import { useSession } from "next-auth/client";
 import React, { useContext } from "react";
-import useWindowSize from "../../utils/useCustomResize";
+import useWindowSize from "../../utils/useWindowSize";
 import { ChallengesContext } from "../contexts/ChallengesContext";
 import styles from "../styles/components/Profile.module.css";
 

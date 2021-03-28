@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import useWindowSize from "../../utils/useCustomResize";
+import useWindowSize from "../../utils/useWindowSize";
 import { ChallengesContext } from "../contexts/ChallengesContext";
 import styles from "../styles/components/ChallengesCompleted.module.css";
 
