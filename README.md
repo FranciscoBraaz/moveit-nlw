@@ -19,7 +19,7 @@ A aplicação foi desenvolvida durante a  Next Level Week (4ª) da Rocketseat e 
 - [Mockapi.io](https://mockapi.io/)
 
 ### ⚙️ Preview:
-![Preview](https://i.imgur.com/kM0O3xD.gif)
+![Preview](https://i.imgur.com/39GwURb.gif)
 
 ### 🛠️ Desafios propostos ao final do evento
 
