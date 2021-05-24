@@ -9,8 +9,7 @@ A aplicação foi desenvolvida durante a  Next Level Week (4ª) da Rocketseat e 
 ### ⚙️ Veja funcionando:
 [Deploy](https://moveit-nextlevelweek-4.vercel.app/)
 
-<img src="https://i.imgur.com/ALLSCQq.png" alt="usuário não logado" width="320"/>  <img src="https://i.imgur.com/mcB8Ob8.png" alt="usuário logado" width="320"/>
-<img src="https://i.imgur.com/QMfaJLQ.png" alt="desafio inativo" width="320"/>  <img src="https://i.imgur.com/3kXOjBJ.png" alt="desafio ativo" width="320"/> 
+<img src="https://i.imgur.com/SDEaLNp.png" alt="ciclo encerrado" width="80%"/>  
 
 ### Tecnologias utilizadas
 - [Reactjs](https://pt-br.reactjs.org/)
@@ -18,6 +17,9 @@ A aplicação foi desenvolvida durante a  Next Level Week (4ª) da Rocketseat e 
 - [Next.js ](https://nextjs.org/)
 - [NextAuth.js](https://next-auth.js.org/)
 - [Mockapi.io](https://mockapi.io/)
+
+### ⚙️ Preview:
+![Preview](https://i.imgur.com/kM0O3xD.gif)
 
 ### 🛠️ Desafios propostos ao final do evento
 
