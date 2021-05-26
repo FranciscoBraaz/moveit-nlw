@@ -9,7 +9,7 @@ A aplicação foi desenvolvida durante a  Next Level Week (4ª) da Rocketseat e 
 ### ⚙️ Veja funcionando:
 [Deploy](https://moveit-nextlevelweek-4.vercel.app/)
 
-<img src="https://i.imgur.com/SDEaLNp.png" alt="ciclo encerrado" width="80%"/>  
+<img src="https://i.imgur.com/SDEaLNp.png" alt="ciclo encerrado" width="100%"/>  
 
 ### Tecnologias utilizadas
 - [Reactjs](https://pt-br.reactjs.org/)
